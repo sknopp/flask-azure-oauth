@@ -33,8 +33,8 @@ class FlaskAzureOauth(ResourceProtector):
         self.azure_b2c_tenant_mode = app.config.get("AZURE_B2C_TENANT_MODE", False)
         self.azure_tenant_name = app.config.get("AZURE_TENANT_NAME", None)
         self.azure_b2c_registerlogin_userflow_name = app.config.get("AZURE_B2C_REGISTERLOGIN_USERFLOW_NAME", None)
-        assert (self.azure_b2c_tenant_mode and self.azure_tenant_name and self.azure_b2c_registerlogin_userflow_name) \
-            or not self.azure_b2c_tenant_mode, \
+        assert ((self.azure_b2c_tenant_mode and self.azure_tenant_name and self.azure_b2c_registerlogin_userflow_name)
+                or not self.azure_b2c_tenant_mode), \
             "If B2C mode is enabled " \
             "configuration options 'AZURE_TENANT_NAME' and 'AZURE_B2C_REGISTERLOGIN_USERFLOW_NAME' are required!"
 
